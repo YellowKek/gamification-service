@@ -6,7 +6,7 @@
     <changeSet id="2024-03-06-insert-root-admin" author="YellowKek">
         <sql dbms="postgresql">
             INSERT INTO users (name, surname, password, email, active)
-            VALUES ('admin', 'admin', '$2a$10$VIwYM22nkaiQ5Y9ywiGbWecYj81VGR9NCgaOr24Vo36vDlA5KA4ci', 'admin@edu.com', true);
+            VALUES ('admin', 'admin', '$2a$10$IH9TEv6HyAO3LT3pSsmQy.ptJvKVlsur6IDKPCKd0Z1rln62OsLXS', 'admin@edu.com', true);
 
             INSERT INTO roles (name) VALUES ('ROLE_USER');
             INSERT INTO roles (name) VALUES ('ROLE_ADMIN');

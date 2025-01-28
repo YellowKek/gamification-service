@@ -9,6 +9,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class UserLoginResponseDTO {
+    @JsonProperty("id")
+    private Long id;
+
     @JsonProperty("email")
     private String email;
 
