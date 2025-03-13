@@ -7,6 +7,7 @@ import com.business.money.entities.security.Roles;
 import com.business.money.exception.exceptions.NotFoundException;
 import com.business.money.exception.exceptions.UserAlreadyExistsException;
 import com.business.money.repos.UserRepo;
+import com.business.money.util.PasswordGenerator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -25,6 +26,7 @@ public class UserService {
     private final ClanService clanService;
     private final RoleService roleService;
     private final PasswordEncoder passwordEncoder;
+    private final PasswordGenerator passwordGenerator;
 
     public List<UserEntity> getAllUsers() {
         return userRepo.findAll();
@@ -49,19 +51,26 @@ public class UserService {
         if (userRepo.findByEmail(user.getEmail()).isPresent())
             throw new UserAlreadyExistsException("Пользователь с такой почтой уже существует");
 
-        RoleEntity roleUser = roleService.getByName(Roles.USER);
+        RoleEntity roleUser = roleService.getByName("ROLE_USER");
         Set<RoleEntity> roles = Set.of(roleUser);
         user.setRoles(roles);
 
-        var encodedPassword = passwordEncoder.encode(user.getPassword());
+        String password = passwordGenerator.generate();
+        var encodedPassword = passwordEncoder.encode(password);
+        System.out.println(password);
         user.setPasswordHash(encodedPassword);
 
         ClanEntity clan = clanService.getMinClan();
+        System.out.println(clan.getName());
         user.setClan(clan);
+
+        System.out.println("3");
 
         user.setActive(true);
         user.setClanPoints(0);
         user.setCoins(0);
+
+        System.out.println("4");
         return userRepo.save(user);
     }
 

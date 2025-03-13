@@ -24,7 +24,4 @@ public class CreateUserDTO {
     @NotBlank(message = "почта не должна быть пустой")
     @JsonProperty("email")
     private String email;
-
-    @NotBlank(message = "пароль не должен быть пустым")
-    private String password;
 }

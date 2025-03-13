@@ -19,6 +19,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public UserLoginResponseDTO login(@RequestBody UserLoginDTO loginUserDto) {
+        System.out.println(loginUserDto);
         var user = userService.findByEmail(loginUserDto.getEmail());
         return authUtil.responseAuthUser(user, loginUserDto);
     }

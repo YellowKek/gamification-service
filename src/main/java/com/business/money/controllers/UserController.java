@@ -58,6 +58,7 @@ public class UserController {
     @PostMapping
     @AdminPermission
     public UserResponseDTO saveNewUser(@RequestBody @Valid CreateUserDTO createUserDTO) throws NotFoundException, UserAlreadyExistsException {
+        System.out.println("user creation");
         UserEntity user = userMapper.toEntity(createUserDTO);
         user = userService.save(user);
         return userMapper.toUserResponseDTO(user);

@@ -14,7 +14,6 @@ import java.util.Set;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-    @Mapping(target = "passwordHash", source = "password")
     UserEntity toEntity(CreateUserDTO createUserDTO);
 
     @Mapping(target = "clan", source = "clan.name")

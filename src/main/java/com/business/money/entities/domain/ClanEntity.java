@@ -1,10 +1,7 @@
 package com.business.money.entities.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
@@ -14,6 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class ClanEntity {
 
     @Id
@@ -26,7 +24,7 @@ public class ClanEntity {
     private String name;
 
     @Column(name = "points_amount")
-    private Integer poIntegersAmount;
+    private Integer pointsAmount;
 
     @OneToMany(mappedBy = "clan")
     private Set<UserEntity> members;
