@@ -35,3 +35,4 @@ build/
 ### MY ###
 httpTests
 pgdata/
+application.properties
