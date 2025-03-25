@@ -9,4 +9,7 @@ import lombok.Setter;
 public class ClanCreateDTO {
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("image")
+    private String image;
 }

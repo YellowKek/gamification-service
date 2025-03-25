@@ -52,6 +52,7 @@ public class AppExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     private ResponseEntity<ErrorMessage> handleRuntimeException(RuntimeException exception) {
+        System.out.println("runtime error: " + exception.getMessage());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorMessage(exception.getMessage()));
     }
 

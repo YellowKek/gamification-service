@@ -28,4 +28,9 @@ public class ClanEntity {
 
     @OneToMany(mappedBy = "clan")
     private Set<UserEntity> members;
+
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "image")
+    private byte[] image;
 }

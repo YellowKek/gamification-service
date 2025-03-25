@@ -52,7 +52,9 @@ public class UserController {
     @UserPermission
     public UserResponseDTO getUserById(@PathVariable Long id) throws NotFoundException {
         UserEntity foundUser = userService.findById(id);
-        return userMapper.toUserResponseDTO(foundUser);
+        var response = userMapper.toUserResponseDTO(foundUser);
+        response.setPlace(userService.getPlace(foundUser.getId()));
+        return response;
     }
 
     @PostMapping

@@ -14,4 +14,5 @@
     <include file="/db/migrations/2024-03-03-create-roles-table.xml"/>
     <include file="/db/migrations/2024-03-03-create-user-role-table.xml"/>
     <include file="/db/migrations/2024-03-06-insert-root-admin.xml"/>
+    <include file="/db/migrations/2025-033-15-add-clan-image.xml"/>
 </databaseChangeLog>

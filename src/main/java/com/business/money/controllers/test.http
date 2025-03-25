@@ -1,0 +1,15 @@
+GET http://localhost:8080/api/clan/%D0%92%D0%BE%D0%B4%D0%B0
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0NUBnbWFpbC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiZXhwIjoxNzQzMDE4NDY2fQ.kswMfbO8mO-nvPzRis8wGFzPpq5dnLyA1HtT_8I59Aw
+
+
+###
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test5@gmail.com",
+  "password": "WzqRWKLupJ"
+}
+
+###

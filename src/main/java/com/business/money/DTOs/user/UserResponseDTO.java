@@ -37,6 +37,9 @@ public class UserResponseDTO {
     @JsonProperty("is_active")
     private boolean active;
 
+    @JsonProperty("place")
+    private Integer place;
+
     @JsonProperty("roles")
     private Set<String> roles;
 }
